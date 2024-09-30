@@ -4,24 +4,11 @@ import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import Animated, { FadeInDown, FadeInRight } from "react-native-reanimated";
 import { StatusBar } from "expo-status-bar";
-import axios from "axios";
-import { NewsDataType } from "@/types";
+
 
 const Page = () => {
   const router = useRouter();
-  const [breakingNews, setBreakingNews] = useState<NewsDataType[]>([])
-  const getBreakingNews = async () => {
-    try {
-      const url = `https://newsdata.io/api/1/news?apikey=${process.env.EXPO_PUBLIC_API_KEY}&country=br,us&language=en,pt&removeduplicate=1&size=5`
-      const response = await axios.get(url)
 
-      if(response && response.data) {
-        setBreakingNews(response.data.results)
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
   return (
     <View style={styles.container}>
       <ImageBackground source={require("@/assets/images/getting-started.jpg")} style={{flex: 1}} resizeMode="cover" >
