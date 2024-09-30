@@ -3,6 +3,7 @@ import React from "react";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import Animated, { FadeInDown, FadeInRight } from "react-native-reanimated";
+import { StatusBar } from "expo-status-bar";
 
 const Page = () => {
   const router = useRouter();
@@ -10,6 +11,7 @@ const Page = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require("@/assets/images/getting-started.jpg")} style={{flex: 1}} resizeMode="cover" >
+        <StatusBar style="light"/>
         <View style={styles.wrapper}>
           <Animated.Text style={styles.title} entering={FadeInRight.delay(300).duration(500)}>Stay Updated!</Animated.Text>
           <Animated.Text style={styles.description} entering={FadeInRight.delay(700).duration(500)}>Get breaking news and personalized updates directly to your feed.</Animated.Text>
