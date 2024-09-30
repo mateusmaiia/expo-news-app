@@ -12,8 +12,8 @@ const Page = () => {
         <View style={styles.wrapper}>
           <Text style={styles.title}>Stay Updated!</Text>
           <Text style={styles.description}>Get breaking news and personalized updates directly to your feed.</Text>
-          <TouchableOpacity onPress={() => router.replace("/(tabs)")}>
-            <Text>Go to Home Screen</Text>
+          <TouchableOpacity style={styles.btn} onPress={() => router.replace("/(tabs)")}>
+            <Text style={styles.btnText}>Go to Home Screen</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground >  
@@ -51,6 +51,17 @@ const styles = StyleSheet.create({
     letterSpacing: 1.2,
     lineHeight: 22,
     textAlign: "center",
-    
+  },
+  btn:{
+    backgroundColor: Colors.tint,
+    paddingVertical: 15,
+    marginVertical: 20,
+    alignItems: "center",
+    borderRadius: 10,
+  },
+  btnText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: '700',
   }
 });
