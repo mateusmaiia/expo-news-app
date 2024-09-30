@@ -2,6 +2,7 @@ import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react
 import React from "react";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
+import Animated from "react-native-reanimated";
 
 const Page = () => {
   const router = useRouter();
@@ -10,11 +11,13 @@ const Page = () => {
     <View style={styles.container}>
       <ImageBackground source={require("@/assets/images/getting-started.jpg")} style={{flex: 1}} resizeMode="cover" >
         <View style={styles.wrapper}>
-          <Text style={styles.title}>Stay Updated!</Text>
-          <Text style={styles.description}>Get breaking news and personalized updates directly to your feed.</Text>
-          <TouchableOpacity style={styles.btn} onPress={() => router.replace("/(tabs)")}>
-            <Text style={styles.btnText}>Get Started</Text>
-          </TouchableOpacity>
+          <Animated.Text style={styles.title}>Stay Updated!</Animated.Text>
+          <Animated.Text style={styles.description}>Get breaking news and personalized updates directly to your feed.</Animated.Text>
+          <Animated.View>
+            <TouchableOpacity style={styles.btn} onPress={() => router.replace("/(tabs)")}>
+              <Text style={styles.btnText}>Get Started</Text>
+            </TouchableOpacity>  
+          </Animated.View>
         </View>
       </ImageBackground >  
     
